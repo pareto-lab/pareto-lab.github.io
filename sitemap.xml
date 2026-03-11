@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 메인 홈페이지 -->
+  <url>
+    <loc>https://paretolab.kr/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- 매물 목록이나 주요 페이지가 더 있다면 이곳에 추가합니다 -->
+  <!-- 예: 부동산 매물 1 -->
+  <!-- <url>
+    <loc>https://paretolab.kr/property/property-1</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url> -->
+</urlset>
