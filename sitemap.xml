@@ -3,28 +3,28 @@
   <!-- 메인 홈페이지 -->
   <url>
     <loc>https://paretolab.kr/</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-15T00:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- About Us -->
   <url>
     <loc>https://paretolab.kr/about</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-15T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- 매물 상세: property 4 -->
   <url>
     <loc>https://paretolab.kr/property/4</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-15T00:00:00+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- 주거 MBTI -->
   <url>
     <loc>https://paretolab.kr/housing-mbti</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-15T00:00:00+09:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
