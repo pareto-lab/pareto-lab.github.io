@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm cream background palette */
+    --background: 40 33% 97%;
+    --foreground: 20 20% 15%;
+
+    --card: 40 30% 95%;
+    --card-foreground: 20 20% 15%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 20 20% 15%;
+
+    /* Terracotta accent */
+    --primary: 15 55% 50%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 35 25% 90%;
+    --secondary-foreground: 20 20% 20%;
+
+    --muted: 35 20% 92%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 150 25% 45%;
+    --accent-foreground: 40 33% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 33% 97%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 15 55% 50%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --cream: 40 33% 97%;
+    --cream-dark: 35 25% 90%;
+    --terracotta: 15 55% 50%;
+    --terracotta-light: 15 55% 60%;
+    --sage: 150 25% 45%;
+    --sage-light: 150 20% 55%;
+    --charcoal: 20 20% 15%;
+    --warm-gray: 20 10% 45%;
+
+    /* Typography */
+    --font-serif: 'Noto Serif KR', 'Noto Serif CJK KR', Georgia, serif;
+    --font-sans: 'Inter', 'Noto Sans CJK KR', system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(20 20% 15% / 0.08);
+    --shadow-hover: 0 8px 30px hsl(20 20% 15% / 0.12);
+
+    --sidebar-background: 40 33% 97%;
+    --sidebar-foreground: 20 20% 15%;
+    --sidebar-primary: 15 55% 50%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 35 25% 90%;
+    --sidebar-accent-foreground: 20 20% 15%;
+    --sidebar-border: 35 20% 85%;
+    --sidebar-ring: 15 55% 50%;
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 40 20% 92%;
+
+    --card: 20 15% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 15 55% 55%;
+    --primary-foreground: 20 15% 10%;
+
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 150 25% 50%;
+    --accent-foreground: 20 15% 10%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 15 55% 55%;
+
+    --sidebar-background: 20 15% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 15 55% 55%;
+    --sidebar-primary-foreground: 20 15% 10%;
+    --sidebar-accent: 20 15% 18%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 20 15% 20%;
+    --sidebar-ring: 15 55% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
+
+@layer components {
+  .editorial-heading {
+    @apply font-serif text-foreground tracking-tight;
+  }
+
+  .editorial-subheading {
+    @apply font-sans text-muted-foreground uppercase tracking-widest text-xs font-medium;
+  }
+
+  .editorial-body {
+    @apply font-sans text-foreground leading-relaxed;
+  }
+
+  .card-editorial {
+    @apply bg-card rounded-sm overflow-hidden transition-all duration-500;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-editorial:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+}
+
+/* A4 print page system */
+.print-page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Flowable A4 page — same chrome as .print-page but allows the content to
+   span multiple physical pages when it overflows. Used for sections (e.g.
+   주변 인프라) where the row count is variable and may exceed one page. */
+.print-page-flow {
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  background: white;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-page {
+    position: relative;
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    height: 297mm;
+    overflow: hidden;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-after: page;
+    break-inside: avoid-page;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .print-page-flow {
+    margin: 0;
+    box-shadow: none;
+    width: 210mm;
+    min-height: 297mm;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print-page-flow:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  img {
+    break-inside: avoid;
+  }
+}
+
+/* Hide scrollbar for horizontal scroll areas */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

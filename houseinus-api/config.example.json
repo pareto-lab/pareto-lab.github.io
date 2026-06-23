@@ -1,0 +1,88 @@
+{
+  "app_name": "houseinus-api",
+  "debug": true,
+  "timezone": "Asia/Seoul",
+  "host": "127.0.0.1",
+  "port": 8098,
+  "frontend_url": "http://localhost:8080",
+  "session_secret": "change-me-to-a-long-random-string",
+  "session_lifetime_seconds": 1209600,
+  "cors_allowed_origins": [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080"
+  ],
+  "database": {
+    "host": "localhost",
+    "port": 8432,
+    "user": "dev",
+    "password": "devpassword",
+    "name": "houseinusdev",
+    "echo": false
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 8379,
+    "db": 0,
+    "password": null,
+    "prefix": "houseinus-dev:"
+  },
+  "oauth": {
+    "google": {
+      "enabled": false,
+      "client_id": "",
+      "client_secret": "",
+      "redirect_uri": "http://localhost:8080/api/v1/auth/oauth/google/callback"
+    },
+    "naver": {
+      "enabled": false,
+      "client_id": "",
+      "client_secret": "",
+      "redirect_uri": "http://localhost:8080/api/v1/auth/oauth/naver/callback"
+    },
+    "kakao": {
+      "enabled": false,
+      "client_id": "",
+      "client_secret": "",
+      "redirect_uri": "http://localhost:8080/api/v1/auth/oauth/kakao/callback"
+    }
+  },
+  "email": {
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_username": "",
+    "smtp_password": "",
+    "smtp_use_starttls": true,
+    "smtp_use_ssl": false,
+    "from_email": "no-reply@paretolab.kr",
+    "from_name": "House in Us",
+    "verification_code_lifetime_seconds": 600,
+    "verification_token_lifetime_seconds": 1800
+  },
+  "storage": {
+    "base_path": "uploads",
+    "public_url_prefix": "/uploads",
+    "max_upload_bytes": 31457280,
+    "allowed_image_types": ["image/jpeg", "image/png", "image/webp"],
+    "allowed_file_types": ["application/pdf"]
+  },
+  "harness": {
+    "base_path": "harness",
+    "provider": "codex",
+    "default_model": null,
+    "codex_command": "codex",
+    "api_base_url": "http://127.0.0.1:8098/api/v1",
+    "mcp_http_timeout_seconds": 15,
+    "mcp_tool_timeout_seconds": 25,
+    "mcp_disable_status_changes": false,
+    "mcp_disable_high_risk": true,
+    "seed_codex_home": null,
+    "bridge_port_min": 50000,
+    "bridge_port_max": 59999,
+    "bridge_idle_shutdown_seconds": 60,
+    "bridge_startup_grace_seconds": 30,
+    "bridge_redis_ttl_seconds": 30
+  },
+  "telegram": {
+    "bot_token": ""
+  }
+}
